@@ -1,14 +1,17 @@
 package com.javaex.ex03;
 
-public class MyList {
+import java.util.Arrays;
+
+//T  --> Point     Circle
+public class MyList<T> {
 	
 	//필드
-	private Object[] oArray;
+	private T[] oArray;
 	private int crtPos;
 	
 	//생성자
 	public MyList() {
-		this.oArray = new Object[3];
+		this.oArray = (T[])new Object[3];
 		this.crtPos = 0;
 	}
 	
@@ -16,20 +19,26 @@ public class MyList {
 	//메소드 g/s
 	
 	//메소드 일반
-	public void add(Object o) {
+	public void add(T o) {
+		
 		oArray[crtPos] = o;
 		crtPos++;
 	}
 	
-	public Object get(int index) {
-		Object result = oArray[index];
+	public T get(int index) {
+		T result = oArray[index];
 		return result;
 	}
 	
 	public int size() {
 		return crtPos;
 	}
-	
+
+
+	@Override
+	public String toString() {
+		return "MyList [oArray=" + Arrays.toString(oArray) + ", crtPos=" + crtPos + "]";
+	}
 	
 
 }
