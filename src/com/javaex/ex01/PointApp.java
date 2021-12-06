@@ -31,6 +31,8 @@ public class PointApp {
 		pList.add(p03);
 		System.out.println(pList.size());
 		
+		System.out.println(pList.toString());
+		
 	}
 
 }
