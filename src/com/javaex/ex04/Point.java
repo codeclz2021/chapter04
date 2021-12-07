@@ -34,8 +34,31 @@ public class Point {
 
 	// 메소드 일반
 	@Override
-	public String toString() {
+	public String toString() { 
 		return "Point [x=" + x + ", y=" + y + "]";
 	}
 
+	
+	@Override
+	public int hashCode() {
+		return x*y; 
+	}
+
+	
+	@Override
+	public boolean equals(Object obj) {
+		Point p = ((Point)obj);
+		
+		if(this.x == p.x && this.y == p.y) {
+			return true;
+		}else {
+			return false;
+		}
+		
+	}
+	
+	
+	
+	
+	
 }
